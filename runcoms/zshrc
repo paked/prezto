@@ -3,6 +3,7 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Harrison Shoebridge <harrison@theshoebridges.com>
 #
 
 # Source Prezto.
@@ -11,3 +12,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export EDITOR=vim
+export GIT_EDITOR=$EDITOR
+export PATH=~/.npm-global/bin:$PATH
+
+source ~/.alias.zsh
