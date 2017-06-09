@@ -1,0 +1,16 @@
+function prompt_harrison_git_info {
+    git rev-parse --is-inside-work-tree > /dev/null 2>&1
+
+    if [ $? -eq 0 ]; then
+        echo -n "($(git rev-parse --abbrev-ref HEAD)) "
+    fi
+}
+
+function prompt_harrison_setup {
+    PS1='%n@%m:%~/ $(prompt_harrison_git_info)> '
+    RPROMPT=''
+
+    prompt_opts=(cr percent subst)
+}
+
+prompt_harrison_setup "$@"
